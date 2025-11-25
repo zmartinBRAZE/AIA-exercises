@@ -1,0 +1,241 @@
+/* ---------------------------
+   Braze Color Variables
+--------------------------- */
+:root {
+    /* Primary */
+    --braze-orange: #FFA524;
+    --braze-pink: #FFA4FB;
+    --braze-purple: #801ED7;
+
+    /* Secondary */
+    --light-orange: #FFD4BC;
+    --red: #E9371F;
+    --light-pink: #F8D3E8;
+    --dark-pink: #91186E;
+    --light-purple: #C9C4EF;
+    --dark-purple: #300266;
+
+    /* Neutrals */
+    --white: #FFFFFF;
+    --off-white: #F9F9FB;
+    --text-dark: #1A1A1A;
+    --text-grey: #666666;
+}
+
+/* ---------------------------
+   Global Resets
+--------------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--off-white);
+    color: var(--text-dark);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a { text-decoration: none; }
+
+/* ---------------------------
+   Navbar
+--------------------------- */
+.navbar {
+    padding: 20px 0;
+    background-color: var(--white);
+    border-bottom: 1px solid #eaeaea;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: var(--dark-purple);
+    letter-spacing: -0.02em;
+}
+
+.sub-logo {
+    font-weight: 400;
+    color: var(--braze-purple);
+}
+
+.nav-link {
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.nav-link:hover { color: var(--braze-purple); }
+
+/* ---------------------------
+   Hero Section
+--------------------------- */
+.hero {
+    background: linear-gradient(135deg, var(--dark-purple) 0%, var(--braze-purple) 100%);
+    color: var(--white);
+    padding: 100px 0 120px;
+    text-align: center;
+}
+
+.pill {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--braze-pink);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.hero-sub {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--light-purple);
+}
+
+/* ---------------------------
+   Grid System
+--------------------------- */
+.workshops {
+    margin-top: -60px; /* Pull grid up into hero */
+    padding-bottom: 80px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* ---------------------------
+   Cards
+--------------------------- */
+.card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.tag-purple { color: var(--braze-purple); }
+.tag-orange { color: var(--braze-orange); }
+.tag-pink { color: var(--dark-pink); }
+.tag-red { color: var(--red); }
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--dark-purple);
+}
+
+.card p {
+    color: var(--text-grey);
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+/* ---------------------------
+   Buttons
+--------------------------- */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--braze-orange);
+    color: var(--dark-purple); /* High contrast dark text on orange */
+}
+
+.btn-primary:hover {
+    background-color: #ffb54d; /* Slight lighten */
+    transform: scale(1.02);
+}
+
+.btn-secondary {
+    background-color: var(--off-white);
+    color: var(--text-grey);
+    pointer-events: none; /* Disable clicks for coming soon */
+}
+
+/* ---------------------------
+   Footer
+--------------------------- */
+footer {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--text-grey);
+    font-size: 0.85rem;
+    border-top: 1px solid #eaeaea;
+}
+
+/* ---------------------------
+   Mobile Responsive
+--------------------------- */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .workshops { margin-top: 40px; }
+}
